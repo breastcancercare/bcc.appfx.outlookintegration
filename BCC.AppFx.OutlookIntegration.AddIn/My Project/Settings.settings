@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="applicationTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Outlook Enterprise Integration</Value>
+    </Setting>
+    <Setting Name="serviceUrlBasePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://enterprise/crm294</Value>
+    </Setting>
+    <Setting Name="databaseName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Enterprise</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

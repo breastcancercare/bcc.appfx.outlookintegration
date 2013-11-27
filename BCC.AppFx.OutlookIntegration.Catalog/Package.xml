@@ -1,0 +1,16 @@
+<PackageSpec 
+    xmlns="bb_appfx_package"
+    xmlns:common="bb_appfx_commontypes"
+    ID="92d16859-919b-42bb-9291-634d3d8b61f0"
+    Name="Outlook Integration Addin Package"
+    Description="Contains specs used by the Outlook Integration AddIn"
+    Author="Breast Cancer Care Development"
+    >
+
+	<common:DependencyList>
+        <common:Dependency CatalogAssembly="BCC.AppFx.OutlookIntegration.Catalog.dll" CatalogItem="BCC.AppFx.OutlookIntegration.Catalog.Tag.Table.xml" />
+        <common:Dependency CatalogAssembly="BCC.AppFx.OutlookIntegration.Catalog.dll" CatalogItem="BCC.AppFx.OutlookIntegration.Catalog.Tag.Add.xml" />
+        <common:Dependency CatalogAssembly="BCC.AppFx.OutlookIntegration.Catalog.dll" CatalogItem="BCC.AppFx.OutlookIntegration.Catalog.Tag.Search.xml" />
+    </common:DependencyList>
+
+</PackageSpec>

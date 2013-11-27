@@ -1,0 +1,30 @@
+﻿<TableSpec 
+	xmlns="bb_appfx_table"
+	xmlns:common="bb_appfx_commontypes" 
+	ID="B7F3EDD1-7A51-4CA7-9BF8-F848D830E028"
+	Name="Outlook interactions"
+	Description="Stores interaction that email is saved as"
+	Author="Breast Cancer Care Development"
+	Tablename="USR_OUTLOOK_INTEGRATION_TAG"
+	>
+
+	<Fields>
+    <TextField Name="MESSAGEID" Description="The RFC2822 Message ID of the email item" Length="500" Required="true" />
+    <ForeignKeyField Name="INTERACTIONID" Description="FK to INTERACTION" ForeignTable="INTERACTION" OnDelete="CascadeDelete" Required="true"/>
+      
+	</Fields>
+  
+	<Indexes>
+        <Index IsUnique="true">
+            <IndexFields>
+                <IndexField Name="MESSAGEID" />
+            </IndexFields>
+        </Index>
+        <Index>
+            <IndexFields>
+                <IndexField Name="INTERACTIONID" />
+            </IndexFields>
+        </Index>
+    </Indexes>
+	
+</TableSpec>

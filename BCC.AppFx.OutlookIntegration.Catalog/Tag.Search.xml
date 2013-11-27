@@ -1,0 +1,56 @@
+﻿<SearchListSpec 
+    xmlns="bb_appfx_searchlist"
+    xmlns:common="bb_appfx_commontypes"
+    ID="23782b71-9db9-4e07-b15d-54fbd00eb05f"
+    Name="Interaction by RFC2822 Message-Id search"
+    Description="This provides the ability to search for interactions saved from Outlook."
+    Author="Breast Cancer Care Development"
+    RecordType="Interaction"
+    TranslationFunctionID="cb610811-f5f2-485a-aa5b-539c05022a79"
+    QuickFindCriteriaFieldID="MESSAGEID"
+    common:SecurityUIFolder="Constituent\Email"
+	>
+
+	<!-- describe the SP used to fetch the results from the given filters.  Note that the @MAXROWS parameter is required, and should be 
+	used to limit the number of rows returned to a reasonable number. -->
+	<SPSearchList SPName="USP_SEARCHLIST_OUTLOOK_INTERACTION_TAG">
+		<common:CreateProcedureSQL>
+			<![CDATA[
+create procedure dbo.USP_SEARCHLIST_OUTLOOK_INTERACTION_TAG
+(
+	@MESSAGEID nvarchar(500) = null,
+  @NAME nvarchar(500) =null,
+	@MAXROWS smallint = 500
+)
+as
+	select top(@MAXROWS)
+		MESSAGEID,
+		INTERACTIONID ID,
+	from 
+		dbo.USR_OUTLOOK_INTEGRATION_TAG
+	where
+		 (MESSAGEID = @MESSAGEID)
+	order by 
+		MESSAGEID asc
+			]]>
+		</common:CreateProcedureSQL>
+	</SPSearchList>
+
+	<!-- describe the filter fields for the search screen -->
+	<common:FormMetaData>
+		<common:FormFields>
+			<common:FormField FieldID="MESSAGEID" Caption="Email message ID" DataType="String" MaxLength="500" />
+		</common:FormFields>
+
+	</common:FormMetaData>
+
+	<!-- also describe the output fields for the search screen -->
+	<Output>
+		<OutputFields>
+      <OutputField FieldID="ID" Caption="Interaction ID" DataType="Guid" IsHidden="true" />
+      <OutputField FieldID="MESSAGEID" Caption="RFC2822 Message Id" DataType="String" />
+    </OutputFields>
+	</Output>
+
+</SearchListSpec>
+

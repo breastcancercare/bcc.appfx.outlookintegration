@@ -1,0 +1,75 @@
+﻿<AddDataFormTemplateSpec 
+	xmlns="bb_appfx_adddataformtemplate"
+	xmlns:common="bb_appfx_commontypes" 
+	ID="6793de00-ab1b-4993-bb98-b3b152f0aac9" 
+	Name="Outlook Integration Tag Add Data Form"
+	Description="Tags the interaction for an Outlook message." 
+	Author="Breast Cancer Care Development"
+	DataFormInstanceID="d286b10f-2d65-4603-991e-bf322f37a9a6" 
+	RecordType="RFC2822 Message-Id"
+	common:SecurityUIFolder="Constituent\Email"
+	>
+
+	<SPDataForm>
+		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_ADD_OUTLOOK_INTEGRATION_TAG">
+			<common:CreateProcedureSQL>
+				<![CDATA[
+create procedure dbo.USP_DATAFORMTEMPLATE_ADD_OUTLOOK_INTEGRATION_TAG
+(
+    @ID uniqueidentifier = null output,
+  	@MESSAGEID nvarchar(500),
+    @INTERACTIONID uniqueidentifier,
+    @CHANGEAGENTID uniqueidentifier = null
+)
+as
+
+set nocount on;
+
+if @ID is null
+    set @ID = newid()
+
+if @CHANGEAGENTID is null  
+    exec dbo.USP_CHANGEAGENT_GETORCREATECHANGEAGENT @CHANGEAGENTID output
+
+declare @CURRENTDATE datetime
+set @CURRENTDATE = getdate()
+
+begin try
+    declare @existingID uniqueidentifier;
+    select @existingID = ID 
+        from dbo.USR_OUTLOOK_INTEGRATION_TAG
+        where (MESSAGEID = @MESSAGEID);
+        
+    if @existingID is null
+	    insert into dbo.USR_OUTLOOK_INTEGRATION_TAG
+		    (ID, MESSAGEID, INTERACTIONID, ADDEDBYID, CHANGEDBYID, DATEADDED, DATECHANGED)
+        values
+		    (@ID, @MESSAGEID, @INTERACTIONID, @CHANGEAGENTID, @CHANGEAGENTID, @CURRENTDATE, @CURRENTDATE)
+	else
+        begin
+          set @ID = @existingID;
+          update dbo.USR_OUTLOOK_INTEGRATION_TAG set INTERACTIONID=@INTERACTIONID where ID=@ID;
+        end
+        
+end try
+
+begin catch
+    exec dbo.USP_RAISE_ERROR
+    return 1
+end catch
+
+return 0				
+				]]>
+			</common:CreateProcedureSQL>
+		</SaveImplementation>
+	</SPDataForm>
+
+	<Context ContextRecordType="RFC2822 Message-Id" RecordIDParameter="MESSAGEID"/>
+
+	<common:FormMetaData>
+		<common:FormFields>
+      <common:FormField FieldID="INTERACTIONID" Caption="Interaction ID" DataType="Guid" Required="true" />
+		</common:FormFields>
+	</common:FormMetaData>
+
+</AddDataFormTemplateSpec>

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BCC.AppFx.OutlookIntegration.Catalog", "BCC.AppFx.OutlookIntegration.Catalog\BCC.AppFx.OutlookIntegration.Catalog.vbproj", "{CE008A61-D469-4DC4-A89F-C3B6CAF25854}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92DA444E-5F34-4887-B769-1104CDE03221}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "BCC.AppFx.OutlookIntegration.Setup_x86", "BCC.AppFx.OutlookIntegration.Setup_x86\BCC.AppFx.OutlookIntegration.Setup_x86.isproj", "{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96} = {E7FA4719-1726-44B3-A9A6-5858AE78EC96}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BCC.AppFx.OutlookIntegration.AddIn", "BCC.AppFx.OutlookIntegration.AddIn\BCC.AppFx.OutlookIntegration.AddIn.vbproj", "{E7FA4719-1726-44B3-A9A6-5858AE78EC96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{CE008A61-D469-4DC4-A89F-C3B6CAF25854}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.Debug|Any CPU.ActiveCfg = DVD-5
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.Debug|Any CPU.Build.0 = DVD-5
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.DVD-5|Any CPU.Build.0 = DVD-5
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.Release|Any CPU.ActiveCfg = SingleImage
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.Release|Any CPU.Build.0 = SingleImage
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{0B08E4AB-BACF-4689-9BE4-82B6D48E54CE}.SingleImage|Any CPU.Build.0 = SingleImage
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FA4719-1726-44B3-A9A6-5858AE78EC96}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

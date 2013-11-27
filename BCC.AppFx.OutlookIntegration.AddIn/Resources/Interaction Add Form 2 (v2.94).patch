@@ -1,0 +1,13 @@
+﻿16d15
+<                 
+23c22,23
+< 	@SITES xml = null output
+---
+> 	@SITES xml = null output,
+> 	@FUNDRAISERID uniqueidentifier = null output
+33a34,38
+> 	select
+> 		@FUNDRAISERID = CONSTITUENTID
+> 	from dbo.APPUSER
+> 	where ID = @CURRENTAPPUSERID
+> 
