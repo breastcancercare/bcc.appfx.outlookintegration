@@ -274,7 +274,9 @@ Friend NotInheritable Class BBECHelper
             dfi.SetValue("STATUSCODE", 2)  'Completed
 
             form.DefaultValues = dfi
-
+                
+            'BUG:  When showing dataform, I had an issue in the WinFormHost.js script - in the function formUpdatedHandler the variable saveButtonCaption was not being assigned a value in all cases, so that when the statement window.external.ScriptFormUpdated(saveButtonCaption) is called, the value is undefined and hence breaks with an error. Add following around the final statement in the source js file: if (saveButtonCaption) {...}    
+            
             If form.ShowDialog() = Windows.Forms.DialogResult.OK Then
 
                 Dim interactionId As Guid = New Guid(form.RecordId.ToString)
